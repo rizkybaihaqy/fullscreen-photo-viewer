@@ -1,0 +1,22 @@
+{
+  "name": "fullscreen-photo-viewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "http-server . -c-1",
+    "watch": "babel src/index.js --watch --out-file lib/index.js --presets=@babel/preset-env",
+    "dev": "concurrently 'npm:watch' 'npm:serve'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "http-server": "^14.1.0",
+    "concurrently": "^7.1.0"
+  }
+}
