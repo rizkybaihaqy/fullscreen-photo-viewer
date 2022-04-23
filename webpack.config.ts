@@ -1,11 +1,17 @@
+import path from "path";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import HtmlWebPackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
-import path from "path";
+import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
+import type { Configuration } from "webpack";
 
-export default function build(env: any, arg: any) {
-  const config = {
+interface WebpackConfiguration extends Configuration {
+  devServer?: DevServerConfiguration;
+}
+
+export default function build(env: any, arg: any): WebpackConfiguration {
+  return {
     entry: {
       index: ["regenerator-runtime/runtime", "./src/index.ts"],
     },
@@ -73,6 +79,4 @@ export default function build(env: any, arg: any) {
       extensions: [".ts", ".tsx", ".js", ".css"],
     },
   };
-
-  return config;
 }
