@@ -6,6 +6,8 @@ export const previewFileOn =
     e.preventDefault();
 
     const dt = e.dataTransfer;
+    if (!dt) return;
+
     const files = dt.files;
 
     container.style.display = "block";
