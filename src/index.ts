@@ -1,9 +1,9 @@
-import { doNothing } from "./events/doNothing";
-import { previewFileOn } from "./events/previewFile";
+import previewFileOn from "./events/previewFile";
+import doNothing from "./events/doNothing";
 
 import "./index.css";
 
-export function init() {
+function init() {
   const dropbox = document.getElementById("dropbox");
   const preview = document.getElementById("preview");
 
